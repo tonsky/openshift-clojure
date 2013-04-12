@@ -7,9 +7,8 @@
 export HTTP_CLIENT="wget --no-check-certificate -O"
 export PORT=$OPENSHIFT_INTERNAL_PORT
 export HOST=$OPENSHIFT_INTERNAL_IP
-# export HOME=$OPENSHIFT_DATA_DIR/home
-export LEIN_JVM_OPTS=-Duser.home=$OPENSHIFT_HOMEDIR
- 
+export LEIN_JVM_OPTS=-Duser.home=$OPENSHIFT_DATA_DIR
+
 cd $OPENSHIFT_REPO_DIR
-$OPENSHIFT_REPO_DIR/bin/lein run >${OPENSHIFT_LOG_DIR}/lein.log 2>&1 &
+$OPENSHIFT_REPO_DIR/bin/lein run >${OPENSHIFT_DIY_LOG_DIR}/lein.log 2>&1 &
 disown
