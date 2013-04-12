@@ -16,7 +16,7 @@
 (defn app [req]
   {:status  200
    :headers {"Content-Type" "text/html"}
-   :body    "hello from http-kit!"})
+   :body    "hello from http-kit v2!"})
 
 (defn -main [& args]
   (server/run-server app { :ip (env "HOST") :port (Integer/parseInt (env "PORT")) }))
