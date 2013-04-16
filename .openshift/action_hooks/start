@@ -11,5 +11,6 @@ export HOME=$OPENSHIFT_DATA_DIR
 export LEIN_JVM_OPTS=-Duser.home=$HOME
 
 cd $OPENSHIFT_REPO_DIR
+chmod +x $OPENSHIFT_REPO_DIR/bin/lein
 $OPENSHIFT_REPO_DIR/bin/lein trampoline run >${OPENSHIFT_DIY_LOG_DIR}/lein.log 2>&1 &
 disown
